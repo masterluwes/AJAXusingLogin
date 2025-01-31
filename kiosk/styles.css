@@ -1,0 +1,159 @@
+html {
+    overflow-y: overlay;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #f5f5f5; /* Light background for better contrast */
+    min-height: 100px;
+    background-image: url(pup_img/PUP_bg.jpg);
+    background-size: cover;
+    background-attachment: fixed; /* Make the background fixed for a parallax effect */
+    position: relative;
+}
+
+body::before {
+    content: ''; /* Necessary to create the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%; /* Cover the full width */
+    height: 100%; /* Cover the full height */
+    background-color: rgba(255, 251, 251, 0.4); /* Overlay with 40% opacity */
+    z-index: -1; /* Make sure it's behind the content */
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    background-color: #800000; /* PUP's maroon color */
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fix header at the top */
+    top: 0;
+    width: 100%; /* Ensure it spans the full width */
+    z-index: 10; /* Make sure it stays above other content */
+}
+
+#header-logo {
+    margin-right: 20px;
+}
+
+#pup_logo {
+    height: 70px; /* Adjust height to your preference */
+    width: auto; /* Maintain aspect ratio */
+    max-height: 100%; /* Prevent scaling beyond the header's height */
+}
+
+.header-text h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.header-text h2 {
+    font-size: 16px;
+    margin: 0;
+    font-weight: normal;
+}
+
+/* Footer Styles */
+#footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #800000; /* PUP's maroon color */
+    color: white;
+    position: fixed; /* Fix footer at the bottom */
+    bottom: 0;
+    width: 100%; /* Ensure it spans the full width */
+    z-index: 10; /* Ensure it stays above other content */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Main Content Styles */
+main {
+    margin-top: 120px; /* Space for the fixed header */
+    margin-bottom: 60px; /* Space for the fixed footer */
+    text-align: center; /* Center align the map */
+}
+
+#map-container {
+    text-align: center; /* Center the map */
+    margin-top: 15px;
+}
+
+.scroll-bar {
+    text-align: center;
+    margin: 20px 0;
+}
+
+img {
+    max-width: 100%; /* Responsive resizing */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove inline spacing issues */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    border-radius: 8px; /* Optional rounded corners */
+}
+
+#display {
+    position: absolute;
+    display: none;
+    background: rgba(0, 0, 0, 0.7); /* Dark background for visibility */
+    color: #fff; /* White text for contrast */
+    padding: 5px; /* Reduced padding */
+    border-radius: 5px;
+    pointer-events: none; /* Prevent interference with mouse events */
+    z-index: 1000; /* Ensure it stays on top */
+    font-size: 12px; /* Smaller font size */
+    max-width: 200px; /* Smaller max width */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+#display img {
+    max-width: 100%; /* Ensure image is responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Optional rounded corners */
+    margin-bottom: 5px; /* Reduced margin between image and text */
+}
+
+#blank-space {
+    height: 500px; /* Adjust the height as needed */
+    background-color: #f9f9f9; /* Optional: Add a light background color */
+}
+
+main > #pup_map {
+	margin-top: 30px;
+	margin-left: 0px;
+	border-bottom-style: solid;
+	border-right-style: solid;
+	border-left-style: solid;
+	position: relative;	
+	max-width: 100%;
+}
+
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    #display {
+        font-size: 12px; /* Adjust tooltip font size for smaller screens */
+    }
+}

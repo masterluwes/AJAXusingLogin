@@ -1,0 +1,24 @@
+{
+    "users": [],
+    "0": {
+        "first_name": "Luis Daniel ",
+        "middle_name": "N\/A",
+        "last_name": "Enriquez",
+        "age": "21",
+        "sex": "single",
+        "birthdate": "2025-01-23",
+        "email": "test@gmail.com",
+        "password": "$2y$10$bn9gstTsPLDZP5S8AdL6mOaQUjzwaHIzOGPtdmW7T4kLwAnegtYnG",
+        "confirm-password": "$2y$10$kl8MykQ6EgVy.xZoTiBlAef7XqSXZUAB4mt08QQQsTOpGs3Ko79LC",
+        "contact-method": "email",
+        "region": "ncr",
+        "province": "Metro Manila",
+        "city": "Malabon City",
+        "district": "District 1",
+        "barangay": "Catmon",
+        "zipcode": "1234",
+        "house_lot_no": "1111",
+        "street_name": "2222",
+        "resume": []
+    }
+}

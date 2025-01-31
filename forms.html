@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration Form</title>
+    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="icon" type="image/x-icon" href="assets/reg1.png">
+</head>
+
+<body>
+    <div class="container">
+
+        <header>Employee Registration Form</header>
+        <form action="#">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Personal Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>First Name</label>
+                            <input type="text" name="first_name" placeholder="Enter your first name" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Middle Name <span>(N/A if none)</span></label>
+                            <input type="text" name="middle_name" placeholder="Enter your middle name" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Last Name</label>
+                            <input type="text" name="last_name" placeholder="Enter your last name" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Age</label>
+                            <input type="number" name="age" placeholder="Enter your age" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Sex</label>
+                            <select name="sex">
+                                <option value="" disabled selected>--Choose Sex--</option>
+                                <option value="single">Male</option>
+                                <option value="divorced">Female</option>
+                                <option value="married">Prefer not to say</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label>Birthdate</label>
+                            <input type="date" name="birthdate" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details contact">
+                    <span class="title">Account Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Email Address</label>
+                            <input type="text" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Password</label>
+                            <input type="password" name="password" placeholder="Enter your desired password" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Re-type Password</label>
+                            <input type="password" name="confirm-password" placeholder="Confirm your password" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details method">
+                    <fieldset>
+                        <legend class="title">Preferred Contact Method <span style="color: red;">*</span></legend>
+                        <div class="fields">
+                            <div class="input-field">
+                                <input type="radio" id="contact-email" name="contact-method" value="email" required>
+                                <label for="contact-email">Email</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="radio" id="contact-phone" name="contact-method" value="phone">
+                                <label for="contact-phone">Phone</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="radio" id="contact-physical" name="contact-method" value="physical">
+                                <label for="contact-physical">Social</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="radio" id="contact-postcard" name="contact-method" value="postcard">
+                                <label for="contact-postcard">Physical</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                
+                <button class="nextBtn" onclick="showNextForm()">
+                    <span class="btnText">Next</span>
+                    <i class="uil uil-navigator"></i>
+                </button>
+
+                <button class="backBtn" onclick="history.back()">
+                    <i class="uil uil-arrow-left"></i> Back
+                </button>
+            </div>
+
+            <div class="form second" style="display: none;">
+                <div class="details address">
+                    <span class="title">Address Details</span>
+
+                    <div class="fields">
+                        <!-- Address Inputs -->
+                        <div class="input-field">
+                            <label>Region *</label>
+                            <select name="region" id="slct1" onchange="populate(this.id, 'slct2', 'slct3', 'slct5')" required>
+                                <option value="">--Select Region--</option>
+                                <option value="ncr">National Capital Region (NCR)</option>
+                                <option value="r1">Region I (Ilocos Region)</option>
+                                <option value="r2">Region II (Cagayan Valley)</option>
+                                <option value="r3">Region III (Central Luzon)</option>
+                                <option value="r4a">Region IV-A (CALABARZON)</option>
+                                <option value="r4b">Region IV-B (MIMAROPA)</option>
+                                <option value="r5">Region V (Bicol Region)</option>
+                                <option value="r6">Region VI (Western Visayas)</option>
+                                <option value="r7">Region VII (Central Visayas)</option>
+                                <option value="r8">Region VIII (Eastern Visayas)</option>
+                                <option value="r9">Region IX (Zamboanga Peninsula)</option>
+                                <option value="r10">Region X (Northern Mindanao)</option>
+                                <option value="r11">Region XI (Davao Region)</option>
+                                <option value="r12">Region XII (Soccsksargen)</option>
+                                <option value="r13">Region XIII (CARAGA)</option>
+                                <option value="r14">Cordillera Administrative Region (CAR)</option>
+                                <option value="r15">Autonomous Region in Muslim Mindanao (ARMM)</option>
+                            </select>
+                        </div>
+                    
+                        <div class="input-field">
+                            <label>Province *</label>
+                            <select name="province" id="slct2" onchange="populateCities(this.value, 'slct3', 'slct5')" required>
+                                <option value="">--Select Province--</option>
+                            </select>
+                        </div>
+                    
+                        <div class="input-field">
+                            <label>City/Town *</label>
+                            <select name="city" id="slct3" onchange="populateDistricts(this.value, 'slct5')" required>
+                                <option value="">--Select City/Town--</option>
+                            </select>
+                        </div>
+                    
+                        <div class="input-field">
+                            <label>District *</label>
+                            <select name="district" id="slct5" onchange="populateBarangays(this.value, 'slct4')" required>
+                                <option value="">--Select District--</option>
+                            </select>
+                        </div>
+                    
+                        <div class="input-field">
+                            <label>Barangay *</label>
+                            <select name="barangay" id="slct4" required>
+                                <option value="">--Select Barangay--</option>
+                            </select>
+                        </div>
+                    
+                        <div class="input-field">
+                            <label>Zip Code *</label>
+                            <input type="number" name="zipcode" placeholder="Enter your area's zipcode" required>
+                        </div>
+                    </div>
+                    
+                    <div class="house address">
+                        <div class="fields">
+                            <div class="input-field">
+                                <label>House/Lot Block No.</label>
+                                <input type="text" name="house_lot_no" placeholder="Enter House/Lot Block No." required>
+                            </div>
+                            <div class="input-field">
+                                <label>Street Name</label>
+                                <input type="text" name="street_name" placeholder="Enter Street Name" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="details work">
+                        <span class="title">Work Details</span>
+                        <div class="fields">
+                            <div class="input-field">
+                                <label>Upload Resume *</label>
+                                <input type="file" name="resume" class="input" accept="image/png, image/jpeg" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                <div class="btn-group">
+                    <button class="prevBtn" onclick="showPreviousForm(event)">
+                        <span class="btnText">Previous</span>
+                        <i class="uil uil-arrow-left"></i>
+                    </button>
+
+                    <button type="submit" class="submitBtn">
+                        <span class="btnText">Submit</span>
+                        <i class="uil uil-check"></i>
+                    </button>                    
+                </div>
+            </div>
+
+            <script src="forms.js"></script>
+        </form>
+    </div>
+</body>
+
+</html>

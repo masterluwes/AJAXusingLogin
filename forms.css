@@ -1,0 +1,331 @@
+@font-face{
+    src: url(fonts/Poppins-Medium.ttf);
+    font-family: "Poppins-Medium";
+}
+@font-face{
+    src: url(fonts/Poppins-Bold.ttf);
+    font-family: "Poppins-Bold";
+}
+@font-face {
+    src: url(fonts/Poppins-ExtraLight.ttf);
+    font-family: "Poppins-ExtraLight";
+}
+@font-face{
+    src: url(fonts/Poppins-Regular.ttf);
+    font-family: "Poppins-Regular";
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins-Medium";
+}
+
+:root{
+    --bg-color: #518BFF;
+    --second-bg-color: #fff;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-color);
+}
+
+.container{
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 0 15px;
+    background-color: var(--second-bg-color);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container header{
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.container header::before{
+    content: "";
+    position: absolute; 
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+    width: 280px;
+    border-radius: 8px;
+    background-color: var(--bg-color);
+}
+
+.container form{
+    position: relative;
+    margin-top: 16px;
+    min-height: 490px;
+    background-color: #fff;
+}
+
+.container form .details{
+    margin-top: 30px; 
+}
+
+.container form .title{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 6px 0;
+    color: #333;
+}
+
+.container form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+form .fields .input-field{
+    display: flex;
+    width: calc(100%/ 3 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.input-field label{
+    font-size: 14px;
+    font-weight: 500;
+    color: #2e2e2e;
+}
+
+.input-field input{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+
+.input-field input:is(:focus, :valid){
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+}
+
+.input-field input[type="date"]{
+    color: #707070;
+}
+
+.input-field input[type="date"]:valid{
+    color: #333;
+}
+
+.input-field{
+    position: relative; 
+}
+
+.input-field select{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px; 
+    height: 42.5px;
+    margin: 8px 0; 
+}
+
+.details.method .fields {
+    display: inline;                
+    margin: 0;                     
+    width: 100%;                   
+}
+
+.details.method .input-field {
+    display: inline-block;          
+    width: calc(25% - 20px);       
+    margin-right: 20px;           
+    vertical-align: middle;         
+}
+
+.details.method .input-field:last-child {
+    margin-right: 0;               
+}
+
+.details.method input[type="radio"] {
+    margin-right: 10px;              
+    accent-color: #518BFF;          
+    cursor: pointer;                 
+    appearance: none;               
+    height: 15px;                  
+    width: 5px;
+    border: 2px solid #aaa;                      
+    outline: none;                   
+    transition: background 0.2s;     
+}
+
+.details.method input[type="radio"]:checked {
+    background: #518BFF;             
+    border-color: #518BFF;      
+}
+
+.details.method label {
+    cursor: pointer;                
+    user-select: none;             
+    display: inline-block;        
+    vertical-align: middle;         
+    margin: 0;  
+    padding-bottom: 25px;                              
+}
+
+.details.method input[type="radio"]:focus {
+    outline: none;                  
+}
+
+fieldset {
+    border: 1px solid #ccc; /* Define a subtle border */
+    padding: 1rem; /* Add spacing inside the fieldset */
+    border-radius: 8px; /* Round the corners for a cleaner look */
+}
+
+legend {
+    font-size: 1.1rem; /* Adjust the legend size */
+    font-weight: bold; /* Make the legend stand out */
+    padding: 0 0.5rem; /* Add padding around the legend text */
+    color: #333; /* Set a readable color */
+}
+
+.house.address .fields{
+    display: flex;
+    gap: 20px; /* Adjust spacing between input fields as needed */
+}
+
+.details.work .input{
+    padding: 10px;
+    width: 250px;
+}
+
+.house.address .fields .input-field {
+    flex: 1;
+}
+
+.form.first button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    margin: 25px 0;
+    background-color: var(--bg-color);
+    float: right;
+    cursor: pointer;
+}
+
+.form.first button:hover{
+    background-color: #265df2;
+}
+
+.form.first button i{
+    margin: 0 6px;
+}
+
+.backBtn {
+    position: relative;
+    right: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 120px;
+    background-color: var(--bg-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.backBtn:hover {
+    background-color: #265df2;
+}
+
+/* Add styles for the second form */
+.form.second {
+    display: none; /* Initially hidden */
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0;
+}
+
+.prevBtn, .submitBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    cursor: pointer;
+}
+
+.prevBtn:hover, .submitBtn:hover {
+    background-color: #265df2;
+}
+
+.prevBtn i, .submitBtn i {
+    margin: 0 6px;
+}
+
+label::after {
+    content: " *";
+    color: red;
+    font-size: smaller;
+}
+
+label[for]:not([required])::after {
+    content: ""; /* Optional fields won't get asterisks */
+}
+
+
+@media(max-width: 750px){
+    .container form{
+        overflow-y: scroll;
+    }
+    .container form::-webkit-scrollbar{
+        display: none;
+    }
+    form .fields .input-field{
+        width: calc(100%/ 2 - 15px)
+    }
+    .details.method .input-field{
+        width: calc(100%/ 6 - 20px)
+    }
+}
+
+@media (max-width: 550px){
+    form .fields .input-field{
+        width: 100%;
+    }
+}
